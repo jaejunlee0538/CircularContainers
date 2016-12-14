@@ -1,20 +1,26 @@
-# CircularContainers
-Circular Queue/Stack/Deque/Array Template Implementation for Arduino.
+/*
+ Name:		CircularContainers.ino
+ Created:	12/15/2016 3:49:08 AM
+ Author:	jaejunlee
+*/
+#include "CircularQueue.h"
+#include "CircularStack.h"
+#include "CircularDeque.h"
+#include "CircularArray.h"
+// the setup function runs once when you press reset or power the board
+void setup() {
+	Serial.begin(115200);
+	ExampleQueue();
+	ExampleStack();
+	ExampleDeque();
+	ExampleArray();
+}
 
-# Brief Overview
-CircularArray/CircularDeque/CircularQueue/CircularStack are all implemented based on `CircularContainer` class.
+// the loop function runs over and over again until power down or reset
+void loop() {
+  
+}
 
-There are 2 visual studio projects, CircularContainers and DevelCircularContainers.
-
-**CircularContainers** project is providing simple example of how-to-use each class.
-
-**DevelCircularContainers** project is not an Arduino project, but Windows Console Application.
-It contains **testing code** for important base-class `CircularContainer`.
-
-# Example Code
-`CircularXXX<int, 10> container;` declares a container which can contains maximally **10** of `int` type data.
-
-``` c++
 void ExampleQueue(){
 	Serial.println("-------Queue-------");
 	CircularQueue<int, 3> Q3;
@@ -87,4 +93,3 @@ void ExampleArray(){
 		Serial.println(Array6[i]);
 	}
 }
-```
