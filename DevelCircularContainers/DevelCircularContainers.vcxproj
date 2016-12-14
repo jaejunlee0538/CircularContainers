@@ -78,14 +78,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\test_code.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="..\CircularContainers\CircularArray.h" />
     <ClInclude Include="..\CircularContainers\CircularContainer.h" />
     <ClInclude Include="..\CircularContainers\CircularDeque.h" />
     <ClInclude Include="..\CircularContainers\CircularQueue.h" />
     <ClInclude Include="..\CircularContainers\CircularStack.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="test_code.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
