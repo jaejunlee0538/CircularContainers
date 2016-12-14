@@ -8,16 +8,8 @@ public:
 		_buffer.resize(Capacity);
 	}
 
-	bool empty() const{
-		return _buffer.empty();
-	}
-
 	size_t size() const{
 		return _buffer.size();
-	}
-
-	size_t capacity() const{
-		return _buffer.capacity();
 	}
 
 	void fill(const T& val){
