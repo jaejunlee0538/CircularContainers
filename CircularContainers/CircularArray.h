@@ -13,9 +13,8 @@ public:
 	}
 
 	void fill(const T& val){
-		_buffer.clear();//clear containing all data 
-		while (_buffer.capacity()){
-			_buffer.push_back(val);//fill all data capacity with 'val'
+		for(size_t i=0;i<Capacity;i++){
+			at(i) = val;
 		}
 	}
 
