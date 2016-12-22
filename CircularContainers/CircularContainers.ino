@@ -7,6 +7,7 @@
 #include "CircularStack.h"
 #include "CircularDeque.h"
 #include "CircularArray.h"
+#include "CircularBuffer.h"
 // the setup function runs once when you press reset or power the board
 void setup() {
 	Serial.begin(115200);
@@ -14,11 +15,41 @@ void setup() {
 	ExampleStack();
 	ExampleDeque();
 	ExampleArray();
+	ExampleBuffer();
 }
 
 // the loop function runs over and over again until power down or reset
 void loop() {
   
+}
+
+void ExampleBuffer(){
+	Serial.println("-------Buffer-------");
+	CircularBuffer<int, 5> Buffer5;
+	for(int i=0;i<5;i++){
+		Serial.print("write : ");
+		Serial.println(i);
+		Buffer5.write(i);
+	}
+	Serial.print("Data : ");
+	while(!Buffer5.empty()){
+		Serial.print(Buffer5.read());
+		Serial.print(" ");
+	}
+	Serial.println("");
+
+	Serial.println("Writing data more than the capacity(5)");
+	for (int i = 0; i<8; i++) {
+		Serial.print("write : ");
+		Serial.println(i);
+		Buffer5.write(i);
+	}
+	Serial.print("Data : ");
+	while (!Buffer5.empty()) {
+		Serial.print(Buffer5.read());
+		Serial.print(" ");
+	}
+	Serial.println("");
 }
 
 void ExampleQueue(){

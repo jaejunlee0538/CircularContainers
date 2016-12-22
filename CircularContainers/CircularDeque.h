@@ -13,6 +13,10 @@ public:
 		return _buffer.empty();
 	}
 
+	bool full() const{
+		return _buffer.capacity() == 0;
+	}
+
 	void clear(){
 		_buffer.clear();
 	}
@@ -23,6 +27,34 @@ public:
 
 	size_t capacity() const{
 		return _buffer.capacity();
+	}
+
+	/*
+	make sure index 'i' is in range of [0,this->size()) .
+	*/
+	T& at(const size_t& i){
+		return _buffer.at(i);
+	}
+
+	/*
+	make sure index 'i' is in range of [0,this->size()) .
+	*/
+	const T& at(const size_t& i) const{
+		return _buffer.at(i);
+	}
+
+	/*
+	make sure index 'i' is in range of [0,this->size()) .
+	*/
+	T& operator[](const size_t& i){
+		return _buffer.at(i);
+	}
+
+	/*
+	make sure index 'i' is in range of [0,this->size()) .
+	*/
+	const T& operator[](const size_t& i) const{
+		return _buffer.at(i);
 	}
 
 	const T& front() const{

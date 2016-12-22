@@ -124,6 +124,10 @@ public:
 			clear();
 	}
 
+	/*
+	push back 'val' into buffer.
+	if the buffer is full, do nothing.
+	*/
 	void push_back(const T& val){
 		//if container is full, do nothing.
 		if (capacity()){
@@ -135,6 +139,10 @@ public:
 		}
 	}
 
+	/*
+	push front 'val' into buffer.
+	if the buffer is full, do nothing.
+	*/
 	void push_front(const T& val){
 		//if container is full, do nothing.
 		if (capacity()){
